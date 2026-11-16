@@ -1,0 +1,35 @@
+export const endpoints = {
+  products: {
+    collection: '/api/v1/products',
+    byId: (id) => `/api/v1/products/${id}`,
+    bySku: (sku) => `/api/v1/products/sku/${encodeURIComponent(sku)}`,
+    byCategory: (category) => `/api/v1/products/category/${encodeURIComponent(category)}`,
+    categories: '/api/v1/products/categories',
+    filter: '/api/v1/products/filter',
+    lowStock: '/api/v1/products/low-stock',
+    stock: (id) => `/api/v1/products/${id}/stock`,
+  },
+  orders: {
+    collection: '/api/v1/orders',
+    byId: (id) => `/api/v1/orders/${id}`,
+    byNumber: (orderNumber) => `/api/v1/orders/number/${encodeURIComponent(orderNumber)}`,
+    byCustomer: (customerId) => `/api/v1/orders/customer/${customerId}`,
+    dispatchNext: '/api/v1/orders/dispatch-next',
+    fulfillmentQueue: '/api/v1/orders/fulfillment-queue',
+    cancel: (id) => `/api/v1/orders/${id}/cancel`,
+    ship: (id) => `/api/v1/orders/${id}/ship`,
+    deliver: (id) => `/api/v1/orders/${id}/deliver`,
+  },
+  customers: {
+    collection: '/api/v1/customers',
+    byId: (id) => `/api/v1/customers/${id}`,
+    byEmail: (email) => `/api/v1/customers/email/${encodeURIComponent(email)}`,
+  },
+  analytics: {
+    orderStatusCounts: '/api/v1/analytics/order-status-counts',
+    revenueByStatus: '/api/v1/analytics/revenue-by-status',
+    valuationStats: '/api/v1/analytics/valuation-stats',
+    inventoryValuation: '/api/v1/analytics/inventory-valuation',
+    topCustomers: '/api/v1/analytics/top-customers',
+  },
+};
